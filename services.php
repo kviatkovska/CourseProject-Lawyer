@@ -6,7 +6,7 @@
   
  <?php require_once "Z:\home\site\www\blocks\menu.php" ?>
 
-<div class="services"><b><i>Оберіть потрібну сферу:</b></i><br>
+<div class="services"><b>Оберіть потрібну сферу:</b><br>
 <a href="1.php"title="Консультування та розроблення договорів"</a>
 <img src="img\1.png">Консультування та розроблення договорів<br>
 
@@ -31,5 +31,13 @@
 <a href="8.php"title="Сфера інтелектуальної власності"</a>
 <img src="img\8.png"> Сфера інтелектуальної власності<br>
 </div>
+
+<footer>
+   <div class="text2" align="center">
+<b>Контактна інформація</b> <br>
+<i><b>Телефон: 0987654321   |   Адресa: вул. Міцкевича, 1   |   Email: advokatrivne@example   |   Графік роботи: Щодня 10:00-18:00</i></b><br> 
+</div>
+ </footer>
+ 
 </body>
 </html>
