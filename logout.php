@@ -8,14 +8,14 @@
 </head>
 <body>
  <?php require "blocks/header.php" ?> 
- <?php require "blocks/menu.php" ?>
+<?php
+session_start();
+session_destroy();
+?>
 <div class="inputtext"><h3>Вхід у систему для адвоката:</h3><br>
-<form action="login.php" method="post">		
-		<input type="text" name="login" value="" placeholder="Ваш логін*" required><br>
-		<input type="text" name="password" value="" placeholder="Ваш пароль*" required><br>
-		<input type="submit" value="Увійти">
-</form>
+<?php
+echo 'Ви вийшли з кабінету. <a href="/reg.php">Повернутись.</a>';
+?>
 </div>
- <?php require "blocks/footer.php" ?>
 </body>
 </html>
