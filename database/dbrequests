@@ -1,1 +1,10 @@
-
+INSERT INTO employees (e_name, email, login, password) VALUES ('$e_name', '$email', '$login', '$password')
+INSERT INTO lawyers (l_name, experience, qualification) VALUES ('$l_name', '$experience', '$qualification')
+INSERT INTO services (s_name, price, lawyer_id) VALUES ('$s_name', '$price', '$lawyer_id')
+SELECT * FROM lawyers
+SELECT * FROM services
+SELECT s_name, price FROM services WHERE s_id = '1'
+SELECT * FROM lawyers WHERE l_id = '1' OR l_id = '2'
+SELECT login, password FROM employees WHERE login ='" . $_POST["login"] . "' and password = '". $_POST["password"]."
+update*
+delete*
