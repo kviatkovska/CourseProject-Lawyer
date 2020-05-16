@@ -8,43 +8,32 @@
 </head>
 <body>
  <?php require "../blocks/header.php" ?> 
- <div class="leftcol">
- <img src="../img/l14.jpg" width="270" height="400"><br>
- Іващенко Ірина<br>
- Учасник Ради адвокатів Рівненської області 
- </div>
-<div class="emplbody">
-<div class="table">
-<?php require_once "../dbconnect.php";
-$sql = "SELECT s_name, price FROM services WHERE s_id = '8'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	echo "<table><tr><th>Послуга</th><th>Ціна</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  echo "<tr><td>" . $row["s_name"]. "</td> 
-				<td>" . $row["price"]. "</td></tr>";
-  }
-} else {
-  echo "0 results";}
-  
-$sql = "SELECT * FROM lawyers WHERE l_id = '14'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	echo "<table><tr><th colspan=2>Адвокати у цій сфері:</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  echo "<tr><td>" . $row["l_name"]. "</td> 
-				<td>Стаж роботи: " . $row["experience"]. "</td></tr>";
-  }
-} else {
-  echo "0 results";}
-  
+  <div id="col1">
+   <img src="../img/l14.jpg"><br>
+   Іващенко Ірина<br>
+   Вища юридична освіта. Фахівець у справах із захисту інтелектуальної власності 
+  </div>
+  <div id="col2">
+ <?php require_once "../dbconnect.php";
+ $sql = "SELECT s_name, price FROM services WHERE s_id = '8'";
+ $result = $conn->query($sql);
+ if ($result->num_rows > 0) {
+   echo "<b>Послуга:</b>";
+    while($row = $result->fetch_assoc()) {
+	  echo "<p><b>" . $row["s_name"]. ", " . $row["price"]. "</b></p>"; }
+} else { echo "0 results";}
+ ?> 
+  Оформлення/реєстрація прав на ітелектуальну власність<br> 
+ <?php 
+ $sql = "SELECT * FROM lawyers WHERE l_id = '14'";
+ $result = $conn->query($sql);
+   if ($result->num_rows > 0) {
+	echo "<b>Адвокати у цій сфері:</b>";
+      while($row = $result->fetch_assoc()) {
+	    echo "<p><b>" . $row["l_name"]. ". Стаж роботи -  " . $row["experience"]. "</b></p>"; }
+} else { echo "0 results";}
   $conn->close();
-?>
-</div>
-</div>
+ ?>
+  </div>
 </body>
 </html>

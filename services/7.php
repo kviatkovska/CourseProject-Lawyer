@@ -5,46 +5,39 @@
    <title>Банківські спори</title>
    <link rel="icon" href="https://img.icons8.com/metro/26/000000/scales.png" type="image/x-icon"/>
    <link rel="stylesheet" type="text/css" href="../css/style.css" >
-</head>
+  </head>
 <body>
  <?php require "../blocks/header.php" ?> 
- <div class="leftcol">
- <img src="../img/l13.jpg" width="270" height="400"><br>
- Луцюк Микола<br>
- Учасник Ради адвокатів Рівненської області 
- </div>
-<div class="emplbody">
-<div class="table">
-<?php require_once "../dbconnect.php";
-$sql = "SELECT s_name, price FROM services WHERE s_id = '7'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	echo "<table><tr><th>Послуга</th><th>Ціна</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  echo "<tr><td>" . $row["s_name"]. "</td> 
-				<td>" . $row["price"]. "</td></tr>";
-  }
-} else {
-  echo "0 results";}
-  
-$sql = "SELECT * FROM lawyers WHERE l_id = '13'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	echo "<table><tr><th colspan=2>Адвокати у цій сфері:</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  echo "<tr><td>" . $row["l_name"]. "</td> 
-				<td>Стаж роботи: " . $row["experience"]. "</td></tr>";
-  }
-} else {
-  echo "0 results";}
-  
+  <div id="col1">
+   <img src="../img/l13.jpg"><br>
+   Луцюк Микола<br>
+   Вища економічна та юридична освіта. Досвід роботи юристом у державному банку.
+  </div>
+  <div id="col2">
+ <?php require_once "../dbconnect.php";
+  $sql = "SELECT s_name, price FROM services WHERE s_id = '7'";
+  $result = $conn->query($sql);
+   if ($result->num_rows > 0) {
+	echo "<b>Послуга:</b>";
+     while($row = $result->fetch_assoc()) {
+	  echo "<p><b>" . $row["s_name"]. ", " . $row["price"]. "</b></p>";  }
+} else {  echo "0 results";}
+  $sql = "SELECT * FROM lawyers WHERE l_id = '13'";
+  $result = $conn->query($sql);
+ ?>
+   Ми надаємо такі юридичні послуги, стосовно банківських справ:<br>
+   • аналіз договорів іпотеки;<br>
+   • робота з документами по припиненні іпотеки, арешту чи заборони;<br>
+   • представництво в судах будь-яких інстанцій, органах реєстрації;<br>
+   • зміна умов контрактів в процесі банківських переговорів;<br>
+ <?php
+   if ($result->num_rows > 0) {
+	echo "<b>Адвокати у цій сфері:</b>";
+     while($row = $result->fetch_assoc()) {
+	  echo "<p><b>" . $row["l_name"]. ". Стаж роботи -  " . $row["experience"]. "</b></p>";  }
+} else {  echo "0 results";}
   $conn->close();
-?>
-</div>
-</div>
+ ?>
+  </div>
 </body>
 </html>

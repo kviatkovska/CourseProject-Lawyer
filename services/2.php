@@ -8,48 +8,46 @@
 </head>
 <body>
  <?php require "../blocks/header.php" ?> 
- <div class="leftcol">
- <img src="../img/l3.jpg" width="270" height="400"><br>
- Філіпова Надія<br>
- Учасник Ради адвокатів Рівненської області 
- </div>
- <div class="rightcol"> 
- <img src="../img/l4.jpg" width="300" height="400"><br>
- Семенко Віктор<br>
- Учасник Ради адвокатів Рівненської області 
- </div>
-<div class="emplbody">
-<div class="table">
-<?php require_once "../dbconnect.php";
-$sql = "SELECT s_name, price FROM services WHERE s_id = '2'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	echo "<table><tr><th>Послуга</th><th>Ціна</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  echo "<tr><td>" . $row["s_name"]. "</td> 
-				<td>" . $row["price"]. "</td></tr>";
-  }
-} else {
-  echo "0 results";}
-  
-$sql = "SELECT * FROM lawyers WHERE l_id = '3' OR l_id = '4'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	echo "<table><tr><th colspan=2>Адвокати у цій сфері:</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  echo "<tr><td>" . $row["l_name"]. "</td> 
-				<td>Стаж роботи: " . $row["experience"]. "</td></tr>";
-  }
-} else {
-  echo "0 results";}
-  
+  <div id="col1">
+  <img src="../img/l3.jpg" ><br>
+   Філіпова Надія<br>
+   Фахівець дозвільної та реєстраційної справи. Вища юридична освіта. Досвід роботи у декількох компаніях.
+  </div>
+  <div id="col2">
+ <?php require_once "../dbconnect.php";
+  $sql = "SELECT s_name, price FROM services WHERE s_id = '2'";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+	echo "<b>Послуга:</b>";
+     while($row = $result->fetch_assoc()) {
+	  echo "<p><b>" . $row["s_name"]. ", " . $row["price"]. "</b></p>";}
+} else {  echo "0 results";}
+ ?> 
+  <p>Реєстрація товариств (ТОВ), приватних підприємств (ПП), акціонерних товариств (АТ) в Рівному<br>
+  <b>Державна реєстрація:</b><br>
+  •ТОВ, ПП, АТ<br>
+  •Підприємців<br>
+  •Громадських організацій<br>
+  •Благодійних організацій<br>
+  •Кооперативів<br>
+  •Підприємств<br>
+  •Внесення змін до статуту та реєстру<br>
+  Також наша компанія спеціалізуються на ліквідації підприємств і супроводі процедури банкрутства.</p> 
+ <?php 
+  $sql = "SELECT * FROM lawyers WHERE l_id = '3' OR l_id = '4'";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+	echo "<b>Адвокати у цій сфері:</b>";
+     while($row = $result->fetch_assoc()) {
+	  echo "<p><b>" . $row["l_name"]. ". Стаж роботи -  " . $row["experience"]. "</b></p>"; }
+} else {  echo "0 results";}
   $conn->close();
-?>
-</div>
-</div>
+ ?>
+  </div>
+  <div id="col3"> 
+   <img src="../img/l4.jpg" ><br>
+   Семенко Віктор<br>
+   Учасник Ради адвокатів Рівненської області 
+  </div>
 </body>
 </html>

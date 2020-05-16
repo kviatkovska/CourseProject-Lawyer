@@ -8,48 +8,39 @@
 </head>
 <body>
  <?php require "../blocks/header.php" ?> 
- <div class="leftcol">
- <img src="../img/l1.jpg" width="270" height="400"><br>
- Шторгін Вікторія<br>
- Учасник Ради адвокатів Рівненської області 
- </div>
- <div class="rightcol"> 
- <img src="../img/l2.jpg" width="300" height="400"><br>
- Чехомський Олег<br>
- Учасник Ради адвокатів Рівненської області 
- </div>
-<div class="emplbody">
-<div class="table">
-<?php require_once "../dbconnect.php";
-$sql = "SELECT s_name, price FROM services WHERE s_id = '1'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	echo "<table><tr><th>Послуга</th><th>Ціна</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  echo "<tr><td>" . $row["s_name"]. "</td> 
-				<td>" . $row["price"]. "</td></tr>";
-  }
-} else {
-  echo "0 results";}
-  
-$sql = "SELECT * FROM lawyers WHERE l_id = '1' OR l_id = '2'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	echo "<table><tr><th colspan=2>Адвокати у цій сфері:</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-	  echo "<tr><td>" . $row["l_name"]. "</td> 
-				<td>Стаж роботи: " . $row["experience"]. "</td></tr>";
-  }
-} else {
-  echo "0 results";}
-  
+  <div id="col1">
+  <img src="../img/l1.jpg"><br>
+   Шторгін Вікторія<br>
+   Адвокат по договірним зобов'язанням. Фахівець з цивільного права. Учасник Ради адвокатів Рівненської області.
+  </div>
+  <div id="col2"
+ <?php require_once "../dbconnect.php";
+  $sql = "SELECT s_name, price FROM services WHERE s_id = '1'";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+	echo "<b>Послуга:</b>";
+     while($row = $result->fetch_assoc()) {
+	  echo "<p><b>" . $row["s_name"]. ", " . $row["price"]. "</b></p>";  }
+} else {  echo "0 results";}
+ ?>
+ Надання послуг укладення, виконання та припинення договорів підряду, перевезення, <br>
+ страхування, комісії, позики тощо, <br>
+ а також правові наслідки порушення зобов’язань і відповідальність сторін за їх невиконання.<br>
+ <?php
+  $sql = "SELECT * FROM lawyers WHERE l_id = '1' OR l_id = '2'";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+	echo "<b>Адвокати у цій сфері:</b>";
+     while($row = $result->fetch_assoc()) {
+	  echo "<p><b>" . $row["l_name"]. ". Стаж роботи -  " . $row["experience"]. "</b></p>";  }
+} else {  echo "0 results";}
   $conn->close();
-?>
-</div>
-</div>
+ ?>
+  </div>
+  <div id="col3"> 
+   <img src="../img/l2.jpg"><br>
+   Чехомський Олег<br>
+   Адвокат по договірним зобов'язанням. Фахівець з цивільного та адміністративного права.
+  </div>
 </body>
 </html>
