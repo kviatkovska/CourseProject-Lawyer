@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,7 @@
    <link rel="stylesheet" type="text/css" href="css/style.css" >
 </head>
 <body>
+<div class="emplbody">
  <?php require "blocks/header.php" ?> 
  <?php require "login.php" ;
  if (! empty($_SESSION['success'])) {
@@ -18,18 +20,21 @@
   <a href="../employees/empreg.php">Додати працівника</a>
   <a href="logout.php">Вийти</a>
 </div>
-
+</div>
 <?php
 }
 else
 {
 ?>
 <div class="inputtext"><h3>Вхід у систему для адвоката:</h3><br>
-<?php
-	
-	echo 'Ви не увійшли в кабінет. <a href="reg.php">Увійти.</a>';
-}
-?>
+<form action="login.php" method="post">		
+		<input type="text" name="login" value="" placeholder="Ваш логін*" required><br>
+		<input type="password" name="password" value="" placeholder="Ваш пароль*" required><br>
+		<input type="submit" value="Увійти">
+</form>
 </div>
+<?php
+	}
+?>
 </body>
 </html>

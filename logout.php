@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +12,12 @@
 <body>
  <?php require "blocks/header.php" ?> 
 <?php
-session_start();
+session_unset();
 session_destroy();
 ?>
 <div class="inputtext"><h3>Вхід у систему для адвоката:</h3><br>
 <?php
-echo 'Ви вийшли з кабінету. <a href="/reg.php">Повернутись.</a>';
+echo 'Ви вийшли з кабінету. <a href="/index.php">Повернутись.</a>';
 ?>
 </div>
 </body>
