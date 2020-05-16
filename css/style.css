@@ -1,6 +1,6 @@
 body{
 	margin: 0;
-    background-image: url(../img/image.jpg);
+    background: url(../img/image2.jpg);
 }
 header{
 	text-align: left;
@@ -10,6 +10,7 @@ header{
 	color: black;
 	border-bottom: 2px solid black;
     font-family: Times New Roman;
+    background-color: rgba(250, 238, 221, 0.3); 
 }
 .top{
 	float: center;
@@ -56,7 +57,7 @@ header{
   display: block; 
   color: maroon;
   text-align: center;
-  padding: 52px;
+  padding: 75px;
   padding-top: 15px;
   padding-bottom: 15px;
   text-decoration: none;
@@ -71,8 +72,8 @@ header{
 	text-align: center;
 	padding-top: 5px;
 	color: maroon;
-	background: rgba(250, 238, 221, 0.7); 
-    padding-bottom: 45px;
+	background: rgba(250, 238, 221, 0.85); 
+    padding-bottom: 15px;
 	font-family: Times New Roman;
 }
 .services{
@@ -103,12 +104,22 @@ header{
   color: black;
   font-family: Times New Roman;
 }
-.leftcol{
-	float: left;
-}
-.rightcol{
-	float: right;
-}
+#col1, #col2, #col3 {
+     width: 435px; 
+	 height: 450px;
+     padding: 0 7px;
+	 padding-top: 62px;
+     float: left;
+	 color: maroon;
+     background-color: rgba(250, 238, 221, 0.6); 
+	 text-align: center;
+    } 
+#col1, #col2 {
+     border-right: 1px solid #000;
+    }
+#col2 {
+     background-color: rgba(250, 238, 221, 0.9); 
+}		
 input, textarea {
   width: 100%;
   padding: 10px 20px;
@@ -176,7 +187,8 @@ input[type=submit]:hover {
   font-family: Times New Roman;
 }
 .emplbody{
-  background: rgba(250, 238, 221, 0.5); 
+  background-image: url(../img/image1.jpg);
+  height: 1150px;
 }
 .table{
   border-top: 2px;
@@ -185,6 +197,7 @@ input[type=submit]:hover {
   color: maroon;
   border-top: 2px solid black;
   padding: 30px 500px 50px;
+  background-color: rgba(250, 238, 221, 0.6); 
 }
 table{
   background: rgba(250, 238, 221, 0.7); 
@@ -195,7 +208,6 @@ th, td {
 footer{
 	height: 50px;
 	left: 0; bottom: 0;
-	text-align: center;
     color: maroon;
 	border-top: 2px solid black;
 	background: #FAEEDD;
