@@ -30,7 +30,6 @@ header{
   font-family: Times New Roman;
 }
 .top a:hover {
-  background-color: grey;
   color: black;
   font-family: Times New Roman;
 }
@@ -46,7 +45,7 @@ header{
   list-style-type: none;
   margin: 0;
   overflow: hidden;
-  color: maroon;
+  color: black;
   background-color:#FAEEDD;
   border-bottom: 2px solid black;
   font-family: Times New Roman;
@@ -55,7 +54,7 @@ header{
 .menu a{
   float: left;
   display: block; 
-  color: maroon;
+  color: black;
   text-align: center;
   padding: 75px;
   padding-top: 15px;
