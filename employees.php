@@ -14,10 +14,10 @@
  if (! empty($_SESSION['success'])) {
     ?>
 <div class="empmenu">
-  <a href="index.php"><h3>Головна</h3></a>
-  <a href="../employees/empservices.php">Перегляд і редагування послуг</a>
-  <a href="../employees/emplawyers.php">Список адвокатів</a>
-  <a href="../employees/empreg.php">Додати працівника</a>
+  <a href="index.php" target="_blank"><h3>Головна</h3></a>
+  <a href="../employees/empservices.php" target="_blank">Перегляд і редагування послуг</a>
+  <a href="../employees/emplawyers.php" target="_blank">Список адвокатів</a>
+  <a href="../employees/empreg.php" target="_blank">Додати працівника</a>
   <a href="logout.php">Вийти</a>
 </div>
 </div>
