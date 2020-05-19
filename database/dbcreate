@@ -23,9 +23,18 @@ CREATE TABLE employees (
   password text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-ALTER TABLE lawyers
-ADD FOREIGN KEY (service_id) REFERENCES services(s_id);
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`s_id`);
+  
+ALTER TABLE `lawyers`
+  ADD PRIMARY KEY (`l_id`);
+  
+ALTER TABLE `employees`
+  ADD PRIMARY KEY (`e_id`);
 
+ALTER TABLE 'lawyers'
+ADD FOREIGN KEY ('service_id') REFERENCES 'services'('s_i0'd);
+'
 DELETE FROM `sitedb`.`services`
 DELETE FROM `sitedb`.`lawyers`
 DELETE FROM `sitedb`.`employees`
