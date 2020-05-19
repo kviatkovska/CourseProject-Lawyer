@@ -33,7 +33,7 @@ ALTER TABLE `employees`
   ADD PRIMARY KEY (`e_id`);
 
 ALTER TABLE 'lawyers'
-ADD FOREIGN KEY ('service_id') REFERENCES 'services'('s_i0'd);
+ADD FOREIGN KEY ('service_id') REFERENCES 'services'('s_id');
 '
 DELETE FROM `sitedb`.`services`
 DELETE FROM `sitedb`.`lawyers`
