@@ -1,2 +1,2 @@
-# website
+# CourseProject
 The law office
